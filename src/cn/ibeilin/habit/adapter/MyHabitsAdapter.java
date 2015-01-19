@@ -10,7 +10,9 @@ import java.util.List;
 
 
 
+
 import cn.ibeilin.habit.entity.Habit;
+import cn.ibeilin.habit.entity.MyHabit;
 import cn.ibeilin.habit.ui.view.ViewHolder;
 import cn.ibeilin.habit.R;
 import android.content.Context;
@@ -20,11 +22,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-	public class HabitsAdapter extends BaseListAdapter<Habit> {
+	public class MyHabitsAdapter extends BaseListAdapter<MyHabit> {
 
 	  Context mContext;
 
-	  public HabitsAdapter(Context ctx, List<Habit> habits) {
+	  public MyHabitsAdapter(Context ctx, List<MyHabit> habits) {
 		    super(ctx, habits);
 	  }
 
@@ -34,7 +36,7 @@ import android.widget.TextView;
 		      conView = inflater.inflate(R.layout.view_habit_list_name, null, false);
 		    }
 		    TextView nameView = ViewHolder.findViewById(conView, R.id.text);
-		    Habit habit = datas.get(position);
+		    MyHabit habit = datas.get(position);
 		    nameView.setText(habit.getName());
 		    return conView;
 		  }

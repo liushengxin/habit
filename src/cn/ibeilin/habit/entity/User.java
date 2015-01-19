@@ -1,11 +1,17 @@
 package cn.ibeilin.habit.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cn.ibeilin.habit.base.App;
 import cn.ibeilin.habit.R;
 
 import com.avos.avoscloud.AVClassName;
+import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVFile;
 import com.avos.avoscloud.AVGeoPoint;
+import com.avos.avoscloud.AVObject;
+import com.avos.avoscloud.AVRelation;
 import com.avos.avoscloud.AVUser;
  
 
@@ -75,6 +81,10 @@ public class User extends AVUser {
   public void removeFriend(User user) {
     getRelation(FRIENDS).remove(user);
   }
+  
+  
+  
+  
 
   public AVGeoPoint getLocation() {
     return getAVGeoPoint(LOCATION);
@@ -94,7 +104,7 @@ public class User extends AVUser {
 
   public String getSexInfo() {
     return getSex() ? App.ctx.getString(R.string.male) :
-        cn.ibeilin.habit.base.App.ctx.getString(R.string.female);
+     App.ctx.getString(R.string.female);
   }
 
   public String getSortLetters() {
@@ -104,4 +114,13 @@ public class User extends AVUser {
   public void setSortLetters(String sortLetters) {
     this.sortLetters = sortLetters;
   }
-}
+  
+  public void joinHabit(Habit habit) { 
+	    getRelation("join").add(habit);
+		
+     }
+  public void deleteHabit(Habit habit) { 
+	    getRelation("join").remove(habit);
+   }
+
+};

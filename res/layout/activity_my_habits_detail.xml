@@ -6,22 +6,22 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/tx_habit_detail_name"
+        android:id="@+id/tx_my_habit_detail_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textSize="@dimen/abc_action_bar_title_text_size" />
 
     <TextView
-        android:id="@+id/tx_habit_detail_content"
+        android:id="@+id/tx_my_habit_record"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
     <Button
-        android:id="@+id/btn_join_habit"
+        android:id="@+id/btn_check_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="加入" />
+        android:text="签到" />
 
 </LinearLayout>

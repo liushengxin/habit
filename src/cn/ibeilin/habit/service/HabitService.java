@@ -18,7 +18,6 @@ public class HabitService {
 
 		AVQuery<Habit> q = AVObject.getQuery(Habit.class); // 查询所有的Habit数据
 		q.setCachePolicy(AVQuery.CachePolicy.NETWORK_ELSE_CACHE);
-
 		// //LeanCloud 提供了几种不同的缓存策略：
 		// IGNORE_CACHE ： 默认的缓存策略，查询不走缓存，查询结果也不存储在缓存。
 		// CACHE_ONLY ： 查询只从缓存获取，不走网络。如果缓存中没有结果，引发一个 AVException。
@@ -30,7 +29,7 @@ public class HabitService {
 		// CACHE_THEN_NETWORK ： 查询首先尝试从缓存中获取，然后再从网络获取。在这种情况
 		List<Habit> habits = new ArrayList<>();
 		habits = q.find();
-		App.registerHabitsCache(habits);
+		App.registerBatchHabitsCache(habits);
 		return habits;
 
 	}

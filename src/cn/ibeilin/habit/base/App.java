@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.StrictMode;
 import android.service.textservice.SpellCheckerService.Session;
 import cn.ibeilin.habit.entity.Habit;
+import cn.ibeilin.habit.entity.MyHabit;
 import cn.ibeilin.habit.entity.User;
 import cn.ibeilin.habit.util.AVOSUtils;
 import cn.ibeilin.habit.util.Logger;
@@ -27,6 +28,7 @@ public class App extends Application {
   public static Session session;
   private static Map<String, User> usersCache = new HashMap<String, User>();
   public static  Map<String, Habit> habitsCache = new HashMap<String,Habit>();
+  public static  Map<String, MyHabit> MyhabitsCache = new HashMap<String,MyHabit>();
  // List<User> friends = new ArrayList<User>();
 
   @Override
@@ -34,10 +36,15 @@ public class App extends Application {
     super.onCreate();
     ctx = this;                                                                //µ√µΩcontext
   //  Utils.fixAsyncTaskBug();
-    AVOSCloud.initialize(this, "6qru9in7y91jlun3a7hkm761wihgycjh3l6lm9hv9xy3x0rz",
-        "p4s3in2tdhks9giwldiu1zd399eqraa7koll384lxzko9mww");
+    
     User.registerSubclass(User.class);     
     AVObject.registerSubclass(Habit.class);
+    AVObject.registerSubclass(MyHabit.class);
+    
+    
+    AVOSCloud.initialize(this, "6qru9in7y91jlun3a7hkm761wihgycjh3l6lm9hv9xy3x0rz",
+        "p4s3in2tdhks9giwldiu1zd399eqraa7koll384lxzko9mww");
+   
         
     AVInstallation.getCurrentInstallation().saveInBackground();
    // PushService.setDefaultPushCallback(ctx, LoginActivity.class);
@@ -103,10 +110,6 @@ public class App extends Application {
     registerUserCache(user.getObjectId(), user);
   }
   
-  
-  
- 
-  
   public static void registerBatchUserCache(List<User> users) {
     for (User user : users) {
       registerUserCache(user);
@@ -115,19 +118,43 @@ public class App extends Application {
   
   
   
+  
+  
   //º«¬ºHabitª∫¥Ê
-  public static void registerHabitsCache(List<Habit> habits) {
-	    for (Habit habit: habits) {
-	      habitsCache.put(habit.getObjectId(),habit);
-	    }
+  public static void registerHabitCache(String habitId, Habit habit) {
+	    habitsCache.put(habitId,habit);
 	  }
   
-  
-  //≤È’“Habitª∫¥Ê
+
+  public static void registerBatchHabitsCache(List<Habit> habits) {
+	    for (Habit habit: habits) {
+	    registerHabitCache(habit.getObjectId(),habit);
+	    }
+	  }
+  //≤È’“
   public static Habit lookupHabit(String habitId) {
 	    return habitsCache.get(habitId);
 	  }
+  
+ 
+  
+ 
+  
+  //º«¬ºMyHabitª∫¥Ê
+  public static void registerMyHabitCache(String myHabitId, MyHabit myHabit) {
+	    MyhabitsCache.put( myHabitId, myHabit);
+	  }
 
-
+  
+  public static void registerBacthMyHabitCache(List<MyHabit> myHabits) {
+	    for (MyHabit myHabit: myHabits) {
+	    	registerMyHabitCache(myHabit.getObjectId(),myHabit);
+	    }
+	  }
+  
+  //≤È’“MyHabitª∫¥Ê
+  public static MyHabit lookupMyHabit(String habitId) {
+	    return MyhabitsCache.get(habitId);
+	  }
 
 }
