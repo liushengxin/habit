@@ -1,8 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
- 
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" 
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/button1"
@@ -15,18 +15,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="登陆" />
-    
-        <Button
+
+    <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="习惯列表" />
-        
-            <Button
+
+    <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="我的习惯" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="gift测试" />
 
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发生状态测试" />
+
+</LinearLayout>

@@ -27,7 +27,7 @@ public class MyHabitService {
 		q.setCachePolicy(AVQuery.CachePolicy.NETWORK_ELSE_CACHE);
 		try {
 			habits = q.find();
-			Log.i("leo","获得习惯成功");;
+			Log.i("leo","获得我的习惯成功");;
 		} catch (AVException e) {
 			Log.i("leo","查询失败");;
 		}	

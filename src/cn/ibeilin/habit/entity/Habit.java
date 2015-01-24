@@ -16,8 +16,9 @@ import android.R.string;
 
 public class Habit extends AVObject {
 
-	  static final String HABIT_CLASS = "Habit";
-	  private static final String NAME_KEY = "name";
+	  static final String HABIT_CLASS = "Habit";  
+	  
+	  private static final String NAME_KEY = "name"; 
 	  private static final String TYPE_KEY = "type";
 	  private static final String CONTENT_KEY = "content";
 

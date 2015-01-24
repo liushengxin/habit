@@ -15,5 +15,15 @@ public class C {
   public static final String ACTION_REGISTER_FINISH = "com.avoscloud.chat.register";
   public static final int PAGE_SIZE = 10;
   public static final String CREATED_AT = "createdAt";
+
+public static final String STATUS_DETAIL ="statusDetail";
+
+public static final String FOLLOWER = "follower";
+
+public static final String LIKES = "likes";
+
+public static final String FOLLOWEE = "followee";
+
+public static final String DETAIL_ID = "detailId";
   public static String FROM_NAME = "fromName";
 }

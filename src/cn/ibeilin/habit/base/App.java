@@ -6,6 +6,7 @@ import android.os.StrictMode;
 import android.service.textservice.SpellCheckerService.Session;
 import cn.ibeilin.habit.entity.Habit;
 import cn.ibeilin.habit.entity.MyHabit;
+import cn.ibeilin.habit.entity.Status;
 import cn.ibeilin.habit.entity.User;
 import cn.ibeilin.habit.util.AVOSUtils;
 import cn.ibeilin.habit.util.Logger;
@@ -40,6 +41,7 @@ public class App extends Application {
     User.registerSubclass(User.class);     
     AVObject.registerSubclass(Habit.class);
     AVObject.registerSubclass(MyHabit.class);
+    AVObject.registerSubclass(Status.class);
     
     
     AVOSCloud.initialize(this, "6qru9in7y91jlun3a7hkm761wihgycjh3l6lm9hv9xy3x0rz",
@@ -54,7 +56,7 @@ public class App extends Application {
     } else {
       Logger.level = Logger.NONE;
     }
-    //initImageLoader(ctx);
+     initImageLoader(ctx);//≥ı ºªØimageloader
     
    // openStrictMode();
   }
@@ -90,7 +92,7 @@ public class App extends Application {
   
   public static void initImageLoader(Context context) {
     File cacheDir = StorageUtils.getOwnCacheDirectory(context,
-        "leanchat/Cache");
+        "ibeilin/Cache");
     ImageLoaderConfiguration config = PhotoUtil.getImageLoaderConfig(context, cacheDir);
     // Initialize ImageLoader with configuration.
     ImageLoader.getInstance().init(config);

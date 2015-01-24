@@ -64,26 +64,24 @@ public class HabitListActivity extends BaseActivity implements  OnItemClickListe
 		   refresh();                                //更新ListView	 
 		   initActionBar("习惯列表");
 	  }
-	 
-	  
-	  private void initListView() {
-		 
+	
+	  private void initListView() {	 
 	    habitAdapter = new HabitsAdapter(ctx, habits);
 	    habitListView=(ListView)findViewById(id.habitslist);
 	    habitListView.setAdapter(habitAdapter);
 		habitListView.setOnItemClickListener(this);
 	}
 	  
-	  
-	private void refresh() {
+	  private void refresh() {
 		    new SimpleNetTask(ctx) {
 		      List<Habit> subHabits;
-
+		      
 		    @Override
 			protected void doInBack() throws Exception {
-				subHabits = HabitService.findHabits();
+			    subHabits = HabitService.findHabits();
 			}
-		      
+		     
+		    
 			@Override
 			protected void onSucceed() {
 				Log.i("leo", "更新成功");
@@ -93,9 +91,9 @@ public class HabitListActivity extends BaseActivity implements  OnItemClickListe
 				habitAdapter.notifyDataSetChanged();
 			}
 		}.execute();
-	}
+	} 
 	
-
+	
 	@Override
         	public void onItemClick(AdapterView<?> parent, View view, int position,
 		    	long id) {
@@ -106,11 +104,6 @@ public class HabitListActivity extends BaseActivity implements  OnItemClickListe
 	         intent.putExtra(HabitDetailActivity.HABIT_ID, habit.getObjectId());
 	         intent.putExtra(HabitDetailActivity.HABIT_NAME, habit.getName());
 	         startActivity(intent);
-		
 	}
-
-
-	
 		  }
-	 
-	 
+
