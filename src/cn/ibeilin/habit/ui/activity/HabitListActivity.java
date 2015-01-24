@@ -57,7 +57,6 @@ public class HabitListActivity extends BaseActivity implements  OnItemClickListe
 	 protected void onCreate(Bundle savedInstanceState) {		    
 		    super.onCreate(savedInstanceState);
 		    setContentView(R.layout.activity_habit_list);
-		    Log.i("leo","13");
 		   initListView();			 
 		   
 		   
