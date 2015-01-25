@@ -21,7 +21,9 @@ public class MainActivity extends BaseActivity implements  OnClickListener {
 	 
 	
 	 
-	 Class testActvts[]={HabitListActivity.class,
+	 Class testActvts[]={
+			            RegisterActivity.class,
+			            HabitListActivity.class,
 			 			HabitListActivity.class,
 			 			HabitListActivity.class, 
 			 			MyHabitsActivity.class, 
@@ -29,7 +31,8 @@ public class MainActivity extends BaseActivity implements  OnClickListener {
 			 			SendStatusActivity.class,
 			 			StatusListActivity.class};
 
-	 String testName[]={"暫無",
+	 String testName[]={"注册",
+			            "暫無",
 			 			"暫無",
 			            "習慣列表",
 			            "我的習慣",

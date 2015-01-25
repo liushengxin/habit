@@ -1,12 +1,16 @@
 package cn.ibeilin.habit.ui.activity;
 
+
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import cn.ibeilin.habit.R;
 import cn.ibeilin.habit.base.App;
 import cn.ibeilin.habit.util.Utils;
 
@@ -14,6 +18,7 @@ import cn.ibeilin.habit.util.Utils;
 
 public class BaseActivity extends FragmentActivity {
   Activity ctx;
+  
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -60,4 +65,19 @@ public class BaseActivity extends FragmentActivity {
   void initActionBar(int id){
     initActionBar(App.ctx.getString(id));
   }
+  protected void showError(String errorMessage) {
+		new AlertDialog.Builder(ctx)
+				.setTitle(
+						ctx.getResources().getString(
+								R.string.dialog_message_title))
+				.setMessage(errorMessage)
+				.setNegativeButton(android.R.string.ok,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,
+									int which) {
+								dialog.dismiss();
+							}
+						}).show();
+	}
+
 }
