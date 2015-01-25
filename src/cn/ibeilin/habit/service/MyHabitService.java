@@ -23,7 +23,8 @@ public class MyHabitService {
 	public static List<MyHabit> getAllMyHabits()  {	
 		List<MyHabit> habits = new ArrayList<MyHabit>();
 		AVQuery<MyHabit> q = AVObject.getQuery(MyHabit.class); 
-		q.whereEqualTo("user", "11111");		
+		String userId=AVUser.getCurrentUser().getObjectId();
+		q.whereEqualTo("userId",userId);		
 		q.setCachePolicy(AVQuery.CachePolicy.NETWORK_ELSE_CACHE);
 		try {
 			habits = q.find();

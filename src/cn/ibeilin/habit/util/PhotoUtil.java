@@ -13,7 +13,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.ImageView;
 import cn.ibeilin.habit.R;
-import cn.ibeilin.habit.SendStatusActivity;
+import cn.ibeilin.habit.ui.activity.SendStatusActivity;
 
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;

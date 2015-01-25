@@ -1,4 +1,4 @@
-package cn.ibeilin.habit;
+package cn.ibeilin.habit.ui.activity;
 
 import java.io.File;
 
@@ -6,9 +6,10 @@ import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.SaveCallback;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import cn.ibeilin.habit.R;
 import cn.ibeilin.habit.R.id;
+import cn.ibeilin.habit.R.layout;
 import cn.ibeilin.habit.service.StatusService;
-import cn.ibeilin.habit.ui.activity.BaseActivity;
 import cn.ibeilin.habit.util.PhotoUtil;
 import cn.ibeilin.habit.util.Utils;
 import android.app.Activity;

@@ -4,15 +4,6 @@
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
 
-    <Button
-        android:id="@+id/send_status_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/textView1"
-        android:layout_marginTop="64dp"
-        android:text="发送" />
-
     <EditText
         android:id="@+id/status_content_et"
         android:layout_width="wrap_content"
@@ -31,15 +22,6 @@
         android:layout_marginTop="40dp"
         android:text="TextView" />
 
-    <Button
-        android:id="@+id/add_image_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/send_status_btn"
-        android:layout_alignBottom="@id/send_status_btn"
-        android:layout_alignRight="@id/status_content_et"
-        android:text="插入图片" />
-
     <ImageView
         android:id="@+id/selected_image_IV"
         android:layout_width="wrap_content"
@@ -47,5 +29,23 @@
         android:background="@drawable/icon_info_2"
         android:layout_centerVertical="true"
           />
+
+    <Button
+        android:id="@+id/send_status_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/selected_image_IV"
+        android:layout_alignRight="@+id/add_image_btn"
+        android:layout_marginBottom="24dp"
+        android:text="发送" />
+
+    <Button
+        android:id="@+id/add_image_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/image_path_tv"
+        android:layout_alignBottom="@+id/image_path_tv"
+        android:layout_alignRight="@+id/status_content_et"
+        android:text="插入图片" />
 
 </RelativeLayout>

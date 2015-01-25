@@ -13,9 +13,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 import cn.ibeilin.habit.entity.User;
-import cn.ibeilin.habit.ui.activity.test.GiftActivity;
+import cn.ibeilin.habit.ui.activity.test.VideoActivity;
 import cn.ibeilin.habit.util.Utils;
-import cn.ibeilin.habit.SendStatusActivity;
 
 //Ï°¹ßÁÐ±í
 public class MainActivity extends BaseActivity implements  OnClickListener {
@@ -26,7 +25,7 @@ public class MainActivity extends BaseActivity implements  OnClickListener {
 			 			HabitListActivity.class,
 			 			HabitListActivity.class, 
 			 			MyHabitsActivity.class, 
-			 			GiftActivity.class,
+			 			VideoActivity.class,
 			 			SendStatusActivity.class,
 			 			StatusListActivity.class};
 

@@ -42,7 +42,7 @@ import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-public class GiftActivity extends Activity {
+public class VideoActivity extends Activity {
        
 	  private VideoView video1;  
 	          ImageView imageView;
@@ -54,7 +54,7 @@ public class GiftActivity extends Activity {
 		WindowManager winManager=(WindowManager)getSystemService(Context.WINDOW_SERVICE); 
 	 
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_gift);
+		setContentView(R.layout.activity_video);
 		 
 	        video1=(VideoView)findViewById(R.id.videoView1);  
 	        //动画的初始化
